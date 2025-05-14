@@ -175,6 +175,14 @@ WEBVIEW_API webview_error_t webview_set_title(webview_t w, const char *title) {
   return api_filter([=] { return cast_to_webview(w)->set_title(title); });
 }
 
+WEBVIEW_API webview_error_t webview_set_icon(webview_t w, const char *icon) {
+  using namespace webview::detail;
+  if (!icon) {
+    return WEBVIEW_ERROR_INVALID_ARGUMENT;
+  }
+  return api_filter([=] { return cast_to_webview(w)->set_icon(icon); });
+}
+
 WEBVIEW_API webview_error_t webview_set_size(webview_t w, int width, int height,
                                              webview_hint_t hints) {
   using namespace webview::detail;

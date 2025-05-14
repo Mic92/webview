@@ -191,6 +191,20 @@ protected:
     NSWindow_set_title(m_window, title);
     return {};
   }
+
+  noresult set_icon_impl(const std::string &icon) override {
+    // Needs more binding to be useful.
+
+    //objc::autoreleasepool arp;
+    //auto image = NSImage_imageWithContentsOfFile(icon);
+    //if (image) {
+    //  NSWindow_set_contentView(m_window, image);
+    //}
+    //return {};
+
+    return {};
+  }
+
   noresult set_size_impl(int width, int height, webview_hint_t hints) override {
     objc::autoreleasepool arp;
 

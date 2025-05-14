@@ -303,6 +303,7 @@ TEST_CASE("Bad C API usage without crash") {
   ASSERT_WEBVIEW_FAILED(webview_set_size(w, 0, 0, WEBVIEW_HINT_NONE));
   ASSERT_WEBVIEW_FAILED(webview_navigate(w, nullptr));
   ASSERT_WEBVIEW_FAILED(webview_set_title(w, nullptr));
+  ASSERT_WEBVIEW_FAILED(webview_set_icon(w, nullptr));
   ASSERT_WEBVIEW_FAILED(webview_set_html(w, nullptr));
   ASSERT_WEBVIEW_FAILED(webview_init(w, nullptr));
   ASSERT_WEBVIEW_FAILED(webview_eval(w, nullptr));

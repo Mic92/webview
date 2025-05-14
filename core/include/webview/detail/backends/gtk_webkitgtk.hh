@@ -180,6 +180,11 @@ protected:
     return {};
   }
 
+  noresult set_icon_impl(const std::string &title) override {
+    gtk_window_set_icon_name(GTK_WINDOW(m_window), title.c_str());
+    return {};
+  }
+
   noresult set_size_impl(int width, int height, webview_hint_t hints) override {
     gtk_window_set_resizable(GTK_WINDOW(m_window), hints != WEBVIEW_HINT_FIXED);
     if (hints == WEBVIEW_HINT_NONE) {

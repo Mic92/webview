@@ -126,6 +126,14 @@ WEBVIEW_API void *webview_get_native_handle(webview_t w,
 WEBVIEW_API webview_error_t webview_set_title(webview_t w, const char *title);
 
 /**
+ * Updates the icon of the native window.
+ *
+ * @param w The webview instance.
+ * @param icon The new icon.
+ */
+WEBVIEW_API webview_error_t webview_set_icon(webview_t w, const char *icon);
+
+/**
  * Updates the size of the native window.
  *
  * Remarks:

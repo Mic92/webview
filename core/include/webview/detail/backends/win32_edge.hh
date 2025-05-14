@@ -412,6 +412,19 @@ protected:
     return {};
   }
 
+  noresult set_icon_impl(const std::string &icon) override {
+    // FIXME: This expects the ico format and not png.
+    // TODO: test this:
+    //auto hicon =
+    //    reinterpret_cast<HICON>(LoadImageW(nullptr, widen_string(icon).c_str(),
+    //                                       IMAGE_ICON, 0, 0, LR_LOADFROMFILE));
+    //if (hicon) {
+    //  SendMessageW(m_window, WM_SETICON, ICON_BIG, (LPARAM)hicon);
+    //  SendMessageW(m_window, WM_SETICON, ICON_SMALL, (LPARAM)hicon);
+    //}
+    return {};
+  }
+
   noresult set_size_impl(int width, int height, webview_hint_t hints) override {
     auto style = GetWindowLong(m_window, GWL_STYLE);
     if (hints == WEBVIEW_HINT_FIXED) {
